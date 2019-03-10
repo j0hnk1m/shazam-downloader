@@ -9,8 +9,8 @@ from PIL import Image
 import image
 import pytesseract
 
-im = Image.open("/Users/teddy/Desktop/words1.png")
 
-text = pytesseract.image_to_string(im, lang = "eng")
-
-print(text)
+def to_txt(img_path):
+	im = Image.open(img_path)
+	text = pytesseract.image_to_string(im, lang = "eng")
+	print(text)
