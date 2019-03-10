@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Music</title>
+</head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+body, html {
+  height: 200%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("http://www.nctrnl.co.uk/wp-content/uploads/2016/01/edm-header.jpg");
+
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+}
+
+input[type=text], input[type=text] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=text]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 6px;
+  background-color: #008CBA;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+ }
+
+</style>
+
+<body style="font-family: Georgia">
+<div class="bg-img"></div>
+ <header style="font-size:200%">
+    <center><h1>My Music</h1>
+      <h4>Download music to iTunes!</h4> </center>
+  </header>
+
+    <form action="/action_page.php" class="container">
+            <h2> Enter a song and the artist to automatically download music to your iTunes account! </h2>
+    <label for="song"><b>Song Title</b></label>
+    <input type="text" placeholder="Song" name="song" required="">
+
+    <label for="artist"><b>Artist</b></label>
+    <input type="text" placeholder="Artist" name="artist" required="">
+
+    <button type="submit" class="btn">Submit</button>
+
+    </form>
+
+    <h2> Or... add your most recent shazams to iTunes! </h2>
+    <h4> Make sure to sign in at <a href="https://www.shazam.com/myshazam" target="_blank"> Shazam</a> before starting. </h4>
+    <button class="button" style="vertical-align:middle"><span>Shazam to iTunes!</span></button>
+
+
+</body></html>
