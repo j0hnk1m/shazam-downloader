@@ -17,6 +17,7 @@ google-images-download = "*"
 youtube-dl = "*"
 pytesseract = "*"
 eyed3 = "*"
+requests = "*"
 
 [requires]
 python_version = "3.6"
