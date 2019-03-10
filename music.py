@@ -10,11 +10,8 @@ from PIL import Image
 import eyed3
 
 
-def get_url(song, artist, lyrics):
-	if lyrics:
-		query = urllib.parse.quote(song + ' ' + artist)
-	else:
-		query = urllib.parse.quote(song + ' ' + artist + ' lyrics')
+def get_url(song, artist):
+	query = urllib.parse.quote(song + ' ' + artist + ' lyrics')
 	response = requests.get('https://www.youtube.com/results?search_query=' + query).text
 	p = re.findall(r'\/watch\?v=([^:]+?)"', response)[0]
 	url = 'https://www.youtube.com/watch?v=' + p
