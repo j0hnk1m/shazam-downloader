@@ -1,17 +1,18 @@
 import ocr
+import music
 import webbrowser
-from selenium import webdriver
-import pyscreenshot as ImageGrab
+import pyscreenshot
+import pyautogui
+import time
 
 
 # YOU NEED TO BE LOGGED IN BFEOREHAND BOTH ON MAC AND IPHONE
-webbrowser.open('https://www.shazam.com/myshazam')
-browser = webdriver.Chrome()
-browser.get("https://www.shazam.com/myshazam")
-
-def screenshot():
-
-	image = ImageGrab.grab(bbox=(10, 10, 510, 510))  # X1,Y1,X2,Y2
-
-
-
+webpage = webbrowser.open('https://www.shazam.com/myshazam')
+time.sleep(2)
+pyautogui.scroll(-3)
+time.sleep(2)
+pyautogui.scroll(-2)
+time.sleep(2)
+pyautogui.scroll(-3)
+time.sleep(2)
+pyautogui.scroll(-2)
