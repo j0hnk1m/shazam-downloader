@@ -32,7 +32,7 @@ def song_separate(path, firstRun):
 		crop_imgs.append(img[startingy + 612:startingy + 816, 309:1130])
 	
 	for k in crop_imgs:
-		if np.array_equal(k[185, 500], np.array([255, 255, 255])):
+		if np.array_equal(k[170, 500], np.array([255, 255, 255])):
 			im = Image.fromarray(k)
 			im_path = '/Users/' + getpass.getuser() + '/Downloads' + '/cropped.png'
 			im.save(im_path)
@@ -56,6 +56,8 @@ def song_separate(path, firstRun):
 			playsound('coin.wav')
 		else:
 			os.system('say "shortcut completed"')
+			dir = '/Users/' + getpass.getuser() + '/Downloads'
+			shutil.make_archive(dir + '/client_ss_downloads', 'zip', dir + '/ss_downloads')
 			sys.exit(1)
 
 
@@ -77,9 +79,7 @@ def main():
 			pyautogui.scroll(-2)
 		else:
 			pyautogui.scroll(-3)
-	
-	dir = '/Users/' + getpass.getuser() + '/Downloads/ss_downloads'
-	shutil.make_archive(dir, 'zip', dir)
+
 
 if __name__ == '__main__':
 	main()
