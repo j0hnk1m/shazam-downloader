@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+pyautogui = "*"
+pyobjc = "*"
+pillow = "*"
+opencv-python = "*"
+numpy = "*"
+playsound = "*"
+pandas = "*"
+google-images-download = "*"
+youtube-dl = "*"
+pytesseract = "*"
+eyed3 = "*"
+
+[requires]
+python_version = "3.6"

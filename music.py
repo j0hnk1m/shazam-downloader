@@ -20,19 +20,23 @@ def get_url(song, artist):
 
 
 def download(url):
+	pwd = os.getcwd()
 	os.chdir('/Users/' + getpass.getuser() + '/Music/iTunes/iTunes Media/Automatically Add to iTunes.localized')
 	ydl_opts = {'format': 'bestaudio/best', 'postprocessors': [{'key': 'FFmpegExtractAudio',
 															'preferredcodec': 'mp3', 'preferredquality': '192'}]}
 	with youtube_dl.YoutubeDL(ydl_opts) as ydl:
 		info = ydl.extract_info(url, download=True)
 		filename = ydl.prepare_filename(info)[:-5] + '.mp3'
-	return os.getcwd() + '/' + filename
+	
+	os.chdir(pwd)
+	return '/Users/' + getpass.getuser() + '/Music/iTunes/iTunes Media/Automatically Add to iTunes.localized/' + filename
 
 
 def get_thumbnail(song, artist):
 	query = song + " " + artist
 	response = google_images_download.googleimagesdownload()
 	args = {'keywords': query, 'suffix_keywords': "album cover art", 'limit': 2, 'print_urls': True}
+	pwd = os.getcwd()
 	os.chdir('/Users/' + getpass.getuser() + '/Downloads')
 	img_paths = response.download(args)
 	
@@ -44,8 +48,9 @@ def get_thumbnail(song, artist):
 			thumbnail = v[0]
 		else:
 			thumbnail = v[1]
-		
-		return thumbnail
+	
+	os.chdir(pwd)
+	return thumbnail
 
 
 def set_thumbnail(mp3, thumbnail):
