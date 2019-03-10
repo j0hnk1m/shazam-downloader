@@ -21,15 +21,19 @@ def get_url(song, artist):
 
 def download(url):
 	pwd = os.getcwd()
-	os.chdir('/Users/' + getpass.getuser() + '/Music/iTunes/iTunes Media/Automatically Add to iTunes.localized')
+	dir = '/Users/' + getpass.getuser() + '/Downloads/ss_downloads/'
+	if not os.path.exists(dir):
+		os.makedirs(dir)
+	
+	os.chdir(dir)
 	ydl_opts = {'format': 'bestaudio/best', 'postprocessors': [{'key': 'FFmpegExtractAudio',
-															'preferredcodec': 'mp3', 'preferredquality': '192'}]}
+																'preferredcodec': 'mp3', 'preferredquality': '192'}]}
 	with youtube_dl.YoutubeDL(ydl_opts) as ydl:
 		info = ydl.extract_info(url, download=True)
 		filename = ydl.prepare_filename(info)[:-5] + '.mp3'
 	
 	os.chdir(pwd)
-	return '/Users/' + getpass.getuser() + '/Music/iTunes/iTunes Media/Automatically Add to iTunes.localized/' + filename
+	return dir + filename
 
 
 def get_thumbnail(song, artist):
@@ -60,4 +64,3 @@ def set_thumbnail(mp3, thumbnail):
 	
 	f.tag.images.set(3, open(thumbnail, 'rb').read(), 'image/jpeg')
 	f.tag.save()
-

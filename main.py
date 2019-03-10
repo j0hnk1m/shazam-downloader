@@ -9,9 +9,7 @@ import cv2
 import getpass
 import numpy as np
 from playsound import playsound
-
-
-# YOU NEED TO BE LOGGED INTO SHAZAM BFEOREHAND BOTH ON MAC AND IPHONE
+import shutil
 
 
 def song_separate(path, firstRun):
@@ -41,7 +39,7 @@ def song_separate(path, firstRun):
 			
 			song, artist = ocr.to_txt(im_path)
 			files = list()
-			for (dirpath, dirnames, filenames) in os.walk('/Users/' + getpass.getuser() + '/Music/iTunes/iTunes Media'):
+			for (dirpath, dirnames, filenames) in os.walk('/Users/' + getpass.getuser() + '/Downloads'):
 				files += [os.path.join(dirpath, file) for file in filenames if file[-4:] == '.mp3']
 			
 			exists = False
@@ -79,7 +77,9 @@ def main():
 			pyautogui.scroll(-2)
 		else:
 			pyautogui.scroll(-3)
-
+	
+	dir = '/Users/' + getpass.getuser() + '/Downloads/ss_downloads'
+	shutil.make_archive(dir, 'zip', dir)
 
 if __name__ == '__main__':
 	main()
