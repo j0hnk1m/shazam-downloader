@@ -1,6 +1,6 @@
 # ShazamShortcut
 
-A webpage that runs a python script/program that uses Google's OCR image to text recognition on Shazam's song info popups and automatically download it from Youtube, which can be added automatically to your local computer for easier syncing with your phone. Designed to make life easy.
+A Python script and webpage that uses Google's OCR API to automatically download your Shazam songs in one click to your Downloads folder, which can be added automatically to your local computer for easier syncing with your phone. Designed to make life easy.
 
 Many people who do not have Spotify premium resort to not listening at music or downloading music files from the internet, moving it to the iTunes folder, and syncing iTunes to their phones. Many people also use Shazam, whether integrated with Snapchat or the Shazam app itself, whenever they hear a song they like. This workflow shortcut, dubbed "ShazamShortcut," aims to combine the two common actions together and streamline them together into a simple automated process.
 
