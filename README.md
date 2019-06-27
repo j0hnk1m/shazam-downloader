@@ -1,4 +1,4 @@
-# ShazamShortcut
+# MusicDownloadBot
 
 A Python script and webpage that uses Google's OCR API to automatically download your Shazam songs in one click to your Downloads folder, which can be added automatically to your local computer for easier syncing with your phone. Designed to make life easy.
 
